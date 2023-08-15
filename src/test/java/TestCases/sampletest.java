@@ -35,22 +35,9 @@ public class sampletest {
 //		options.setExperimentalOption("excluseSwitches", new String[] {"enable-automation"});
 		options.addArguments("--remote-allow-origins=*");
 		options.addArguments("--disable-notifications");
-		
-		// Excel Sheet config
-		
-//		int rows=ExcelUtils.getRowCount(file, "Sheet1");
-		
-		
-//		Properties propertie = new Properties();
-//		propertie.load(new FileInputStream("./src/test/resources/config.properties"));
-//		String url =propertie.getProperty("appurl");
-		
+				
 		Locale usLocale =new Locale("en", "US");
 		rb=ResourceBundle.getBundle("config" ,usLocale);  // Load config.properties file 
-		
-//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-//		
-//		WebDriver driver = new ChromeDriver(options);
 		
 		driver =new ChromeDriver(options);
 		

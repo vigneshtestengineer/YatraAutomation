@@ -1,9 +1,11 @@
 package TestCases;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,6 +49,8 @@ public class sampletest {
 		
 		Thread.sleep(2000);
 		
+		//--------------------------------- Searching Bus with scrolling to end of the page--------------------------------------------
+		
 		driver.findElement(By.xpath("//a[@id='booking_engine_buses']")).click();
 		
 		Thread.sleep(1000);
@@ -72,58 +76,32 @@ public class sampletest {
 		
 		driver.findElement(By.xpath("//input[@id='BE_bus_search_btn']")).click();
 		
+		Thread.sleep(10000);
+		
+		// Double Click the Prize to arrange the amount as High to low
+		
+		WebElement prizearrange =driver.findElement(By.xpath("//*[@id=\'rowHeading\']/div[5]/i"));
+		
+		Actions action =new Actions(driver);
+		
+		action.doubleClick(prizearrange).build().perform();
+		
+		Thread.sleep(5000);
+		
+		// Scroll the page to some length down
+		
+		JavascriptExecutor scroll =(JavascriptExecutor) driver;
+//		scroll.executeScript("window.scrollBy(0,50000)");
+		
+		// Scroll page to end of the page
+		
+		scroll.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
 		
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 		
 //	    String selecttype = driver.findElement(By.xpath("//*[@id=\'BE_flight_form_wrapper\']/div[3]/div[1]")).getText();
 //		
